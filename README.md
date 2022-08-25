@@ -8,7 +8,7 @@ Desde el directorio "server", usar `npm run dev`\
 El Back estará andando en [http://localhost:4000/api](http://localhost:4000/api)\
 \
 Desde el directorio "client", usar `npm start`\
-El Front estará andando en [http://localhost:3000](http://localhost:3000)\
+El Front estará andando en [http://localhost:3000](http://localhost:3000)
 
 
 
