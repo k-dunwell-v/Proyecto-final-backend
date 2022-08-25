@@ -2,12 +2,15 @@
 
 Esta es la primera entrega del proyecto final para el curso de Programación Backend que ofrece Coderhouse.
 
-## Inicializar servidor
+## Inicializar
 
-Desde el directorio "server", usar `npm run dev`
+Desde el directorio "server", usar `npm run dev`. [http://localhost:4000/api](http://localhost:4000/api)
+Desde el directorio "client", usar `npm start`. [http://localhost:3000](http://localhost:3000)
 
 
-## Getting Started with Create React App
+
+
+# Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
