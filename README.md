@@ -2,7 +2,8 @@
 
 Esta es la primera entrega del proyecto final para el curso de Programación Backend que ofrece Coderhouse.\
 \
-De momento, toda la parte de los productos se puede ver por medio del Front (React JS).\ Lo que corresponde al carrito y su lógica, aún no está conectado al Back. Usar [Postman](https://web.postman.co) o similares.
+De momento, toda la parte de los productos se puede ver por medio del Front (React JS).\
+Lo que corresponde al carrito y su lógica, aún no está conectado al Back. Usar [Postman](https://web.postman.co) o similares.
 
 ## Inicializar
 
