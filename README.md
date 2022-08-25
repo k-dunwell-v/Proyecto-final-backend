@@ -4,8 +4,11 @@ Esta es la primera entrega del proyecto final para el curso de Programación Bac
 
 ## Inicializar
 
-Desde el directorio "server", usar `npm run dev`. [http://localhost:4000/api](http://localhost:4000/api)
-Desde el directorio "client", usar `npm start`. [http://localhost:3000](http://localhost:3000)
+Desde el directorio "server", usar `npm run dev`\
+El Back estará andando en [http://localhost:4000/api](http://localhost:4000/api)\
+\
+Desde el directorio "client", usar `npm start`\
+El Front estará andando en [http://localhost:3000](http://localhost:3000)\
 
 
 
