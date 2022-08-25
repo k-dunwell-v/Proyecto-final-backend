@@ -1,4 +1,13 @@
-# Getting Started with Create React App
+#  WIP! Proyecto-final-backend-coderhouse
+
+Esta es la primera entrega del proyecto final para el curso de Programación Backend que ofrece Coderhouse.
+
+## Inicializar servidor
+
+Desde el directorio "server", usar `npm run dev`
+
+
+## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
