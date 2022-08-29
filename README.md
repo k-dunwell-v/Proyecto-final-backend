@@ -1,3 +1,21 @@
+#  WIP! Proyecto-final-backend-coderhouse
+
+Esta es la primera entrega del proyecto final para el curso de Programación Backend que ofrece Coderhouse.\
+\
+De momento, toda la parte de los productos se puede ver por medio del Front (React JS).\
+Lo que corresponde al carrito y su lógica, aún no está conectado al Back. Usar [Postman](https://web.postman.co) o similares.
+
+## Inicializar
+
+Desde el directorio "server", usar `npm run dev`\
+El Back estará andando en [http://localhost:4000/api](http://localhost:4000/api)\
+\
+Desde el directorio "client", usar `npm start`\
+El Front estará andando en [http://localhost:3000](http://localhost:3000)
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
