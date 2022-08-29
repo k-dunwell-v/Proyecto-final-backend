@@ -1,13 +1,12 @@
 const express = require("express")
 const router = express.Router()
 const fs = require("fs")
+const app = express()
 
-const admin = true
 
 router.get("/", (req, res) => {
 
     res.json({"admin":admin})
-
 
 })
 
@@ -40,134 +39,133 @@ router.get("/productos/:id", (req, res) => {
     })
 })
 
-router.post("/", (req, res) => {
+//ADMIN REQ
+const admin = true
 
+function isAdmin(req, res, next) {
     if (admin) {
-        const {title, price, thumbnail, detail, stock } = req.body
+        next()
+    } else {
+    res.json({"err":"admin required"})
+    }
+}
 
-        const d = new Date()
-        const date = `[${d.getDate()}/${d.getMonth()}/${d.getFullYear()} ${d.getHours()}:${d.getMinutes()}:${d.getSeconds()}]`
-    
-        fs.readFile("./public/productos.json", "utf-8", (err, products) => {
+router.post("/productos", isAdmin, (req, res) => {
+
+    const {title, price, thumbnail, detail, stock } = req.body
+
+    const d = new Date()
+    const date = `[${d.getDate()}/${d.getMonth()}/${d.getFullYear()} ${d.getHours()}:${d.getMinutes()}:${d.getSeconds()}]`
+
+    fs.readFile("./public/productos.json", "utf-8", (err, products) => {
+        
+        if (err) {
+            const product = {"timestamp": date, "title": title, "price": parseInt(price), "thumbnail": thumbnail, "detail": detail, "stock": stock, "id": 1}
+
+            fs.writeFileSync("./public/productos.json", JSON.stringify([product]))
+
+            // res.redirect(req.get('referer') + "admin");
+
+            res.json({success:true, product:product})
+
+
+        }else{
+            const dataParsed = JSON.parse(products)
+            const product = {"timestamp": date, "title": title, "price": parseInt(price), "thumbnail": thumbnail, "detail": detail, "stock": stock, "id": dataParsed.length + 1}
+            dataParsed.push(product)
+
+            fs.writeFileSync("./public/productos.json", JSON.stringify(dataParsed))
             
-            if (err) {
-                const product = {"timestamp": date, "title": title, "price": parseInt(price), "thumbnail": thumbnail, "detail": detail, "stock": stock, "id": 1}
+            // res.redirect(req.get('referer') + "admin");
+            
+            res.json({success:true, product:product})
+
+        }
+    })  
     
-                fs.writeFileSync("./public/productos.json", JSON.stringify([product]))
+})
+
+router.put("/productos/:id", isAdmin, (req, res) => {
     
-                res.redirect(req.get('referer') + "admin");
-    
-    
-            }else{
-                const dataParsed = JSON.parse(products)
-                const product = {"timestamp": date, "title": title, "price": parseInt(price), "thumbnail": thumbnail, "detail": detail, "stock": stock, "id": dataParsed.length + 1}
-                dataParsed.push(product)
-    
-                fs.writeFileSync("./public/productos.json", JSON.stringify(dataParsed))
+    const { id } = req.params
+    const {title, price, thumbnail, detail, stock } = req.body
+
+    const d = new Date()
+    const date = `[${d.getDate()}/${d.getMonth()}/${d.getFullYear()} ${d.getHours()}:${d.getMinutes()}:${d.getSeconds()}]`
+
+    fs.readFile("./public/productos.json", "utf-8", (err, products) => {
+        
+        if (err) {
+            res.send(err)
+        }else{
+            const dataParsed = JSON.parse(products)
+            const getProduct = dataParsed.findIndex((product => product["id"] === parseInt(id)))
+
+            if (getProduct > -1) {
                 
-                res.redirect(req.get('referer') + "admin");
-                
+                const product = dataParsed[getProduct]
 
-            }
-        })  
-
-    }else{
-        res.json({"err":"admin required"})
-    }
-    
-})
-
-router.put("/productos/:id", (req, res) => {
-
-    if (admin) {
-        const { id } = req.params
-        const {title, price, thumbnail, detail, stock } = req.body
-
-        const d = new Date()
-        const date = `[${d.getDate()}/${d.getMonth()}/${d.getFullYear()} ${d.getHours()}:${d.getMinutes()}:${d.getSeconds()}]`
-
-        fs.readFile("./public/productos.json", "utf-8", (err, products) => {
-            
-            if (err) {
-                res.send(err)
-            }else{
-                const dataParsed = JSON.parse(products)
-                const getProduct = dataParsed.findIndex((product => product["id"] === parseInt(id)))
-
-                if (getProduct > -1) {
-                    
-                    const product = dataParsed[getProduct]
-
-                    if (title) {
-                        product["title"] = title
-                    }
-
-                    if (price) {
-                        product["price"] = price
-                    }
-
-                    if (thumbnail) {
-                        product["thumbnail"] = thumbnail
-                    }
-
-                    if (detail) {
-                        product["detail"] = detail
-                    }
-
-                    if (stock) {
-                        product["stock"] = stock
-                    }
-
-                    product["timestamp"] = date
-
-                    const newText = JSON.stringify(dataParsed)
-                    fs.writeFileSync("./public/productos.json", newText)
-
-                    res.json({"headers":{"Access-Control-Allow-Origin": "*"}})
-
-                }else{
-                    res.send("El ID ingresado no existe.")
+                if (title) {
+                    product["title"] = title
                 }
-            }
-        })
 
-    }else{
-        res.json({"err":"admin required"})
-    }
-    
-})
-
-router.delete("/productos/:id", (req, res) => {
-
-    if (admin) {
-        const { id } = req.params
-
-        fs.readFile("./public/productos.json", "utf-8", (err, products) => {
-            
-            if (err) {
-                res.send("err")
-            }else{
-                const dataParsed = JSON.parse(products)
-                const getProduct = dataParsed.findIndex((product => product["id"] === parseInt(id)))
-
-                if (getProduct > -1) {
-                    dataParsed.splice(getProduct, 1)
-
-                    const newText = JSON.stringify(dataParsed)
-                    fs.writeFileSync("./public/productos.json", newText)
-
-                    res.send("Producto eliminado")
-
-                }else{
-                    res.send("El ID ingresado no existe.")
+                if (price) {
+                    product["price"] = price
                 }
-            }
-        })
 
-    }else{
-        res.json({"err":"admin required"})
-    }
+                if (thumbnail) {
+                    product["thumbnail"] = thumbnail
+                }
+
+                if (detail) {
+                    product["detail"] = detail
+                }
+
+                if (stock) {
+                    product["stock"] = stock
+                }
+
+                product["timestamp"] = date
+
+                const newText = JSON.stringify(dataParsed)
+                fs.writeFileSync("./public/productos.json", newText)
+
+                res.json({success:true})
+
+            }else{
+                res.json({success:false, err:"ID no existe."})
+            }
+        }
+    })
+
 })
 
+router.delete("/productos/:id", isAdmin, (req, res) => {
+
+    const { id } = req.params
+
+    fs.readFile("./public/productos.json", "utf-8", (err, products) => {
+        
+        if (err) {
+            res.send("err")
+        }else{
+            const dataParsed = JSON.parse(products)
+            const getProduct = dataParsed.findIndex((product => product["id"] === parseInt(id)))
+
+            if (getProduct > -1) {
+                dataParsed.splice(getProduct, 1)
+
+                const newText = JSON.stringify(dataParsed)
+                fs.writeFileSync("./public/productos.json", newText)
+
+                res.json({success:true})
+
+            }else{
+                res.json({success:false, err:"ID no existe."})
+            }
+        }
+    })
+
+})
 
 module.exports = router

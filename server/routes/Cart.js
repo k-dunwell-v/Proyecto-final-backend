@@ -103,15 +103,14 @@ router.post("/:id/productos", (req, res) => {
 
             dataParsed[getCart].products.forEach(oldProduct => {
 
-                if (oldProduct["id"] === product["id"]) {
-                    
-                    product["qty"] = oldProduct["qty"] + product["qty"]
+                if (oldProduct["id"] === product[0].id) {
+                    product[0].qty = oldProduct["qty"] + product[0].qty
                     const getProduct = cart["products"].findIndex((product => product["id"] === parseInt(oldProduct["id"])))
                     cart["products"].splice(getProduct, 1)
                 }}
             
             )
-
+            
             const updateProducts = dataParsed[getCart].products.concat(product)
 
             dataParsed[getCart].timestamp = date
@@ -123,6 +122,7 @@ router.post("/:id/productos", (req, res) => {
 
             res.json({success:true, cart:dataParsed[getCart]})
             
+            console.log(dataParsed[getCart])
 
         }
     })
