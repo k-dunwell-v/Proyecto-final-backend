@@ -16,11 +16,10 @@ const cartRouter = require("./routes/Cart")
 app.use("/api", productsRouter)
 app.use("/api/carrito", cartRouter)
 
-app.use(function(err, req, res, next) {
-    console.error(err.stack);
-    res.status(404).send('Something broke!');
-});
-
+app.use(function(req, res, next){
+    res.status(404);
+    res.send("...huh?");
+})
 
 httpServer.listen(PORT, err => {
     if (err) throw err
