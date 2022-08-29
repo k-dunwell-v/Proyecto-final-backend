@@ -2,19 +2,15 @@
 
 Esta es la primera entrega del proyecto final para el curso de Programación Backend que ofrece Coderhouse.\
 \
-De momento, toda la parte de los productos se puede ver por medio del Front (React JS).\
-Lo que corresponde al carrito y su lógica, aún no está conectado al Back. Usar [Postman](https://web.postman.co) o similares.
+De momento, solo se puede probar el servidor usando [Postman](https://web.postman.co) o similares. El cliente puede presentar fallas, NO iniciar.
 
 ## Inicializar
 
 Desde el directorio "server", usar `npm run dev`\
-El Back estará andando en [http://localhost:4000/api](http://localhost:4000/api)\
+El Back estará andando en [http://localhost:8080/api](http://localhost:8080/api)\
 \
 Desde el directorio "client", usar `npm start`\
 El Front estará andando en [http://localhost:3000](http://localhost:3000)
-
-
-
 
 # Getting Started with Create React App
 
