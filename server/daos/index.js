@@ -1,6 +1,6 @@
 let productosDaos, carritosDaos
 
-switch ('mongo') {
+switch ('fs') {
     case 'fs':
         const ProductosDaosFS = require('../daos/productos/ProductosDaosFS')
         const CarritoDaosFS = require('./carritos/CarritosDaosFS')
