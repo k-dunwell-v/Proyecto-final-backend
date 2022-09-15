@@ -10,11 +10,11 @@ app.use(cors());
 
 const PORT = process.env.PORT || 8080
 
-const productsRouter = require("./routes/Products")
-const cartRouter = require("./routes/Cart")
+const productsRouter = require("./routes/Productos.route")
+const cartRouter = require("./routes/Carrito.route")
 
-app.use("/api", productsRouter)
-app.use("/api/carrito", cartRouter)
+app.use("/api/productos", productsRouter)
+app.use("/api/carritos", cartRouter)
 
 app.use(function(req, res, next){
     res.status(404);

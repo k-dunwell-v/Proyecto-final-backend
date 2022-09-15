@@ -4,6 +4,8 @@ Esta es la primera entrega del proyecto final para el curso de Programación Bac
 \
 De momento, solo se puede probar el servidor usando [Postman](https://web.postman.co) o similares. El cliente puede presentar fallas, NO iniciar.
 
+**La carpeta "db" debe ir en la ruta C:\data.
+
 ## Inicializar
 
 Desde el directorio "server", usar `npm run dev`\
