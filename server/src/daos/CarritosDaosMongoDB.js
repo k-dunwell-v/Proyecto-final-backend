@@ -1,3 +1,4 @@
+const { logger } = require('../logs/logger')
 const ContenedorMongoDB = require('../models/contenedorMongoDB')
 
 class CarritosDaosMongoDB extends ContenedorMongoDB {
@@ -16,7 +17,7 @@ class CarritosDaosMongoDB extends ContenedorMongoDB {
             }
     
         } catch (error) {
-            console.log(error); throw error
+            logger.error(err); throw error
         }
 
     }

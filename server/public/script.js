@@ -32,7 +32,7 @@ function addToCart(data) {
                 console.log('Success:', data);
             })
             .catch((error) => {
-                console.log('Error:', error); throw error
+                logger.error(error); throw error
             });
 
         }else{
@@ -40,7 +40,7 @@ function addToCart(data) {
         }
     })
     .catch((error) => {
-        console.log('Error:', error); throw error
+        logger.error(error); throw error
     });
 }
 

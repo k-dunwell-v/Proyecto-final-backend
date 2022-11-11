@@ -120,3 +120,7 @@
 {"level":"warn","message":"Ruta /api/%7C%7C%20%22https://i.im.ge/2022/09/23/1hVLEc.Goose.png%22%7D con método GET no implementada"}
 {"level":"warn","message":"Ruta /api/%7C%7C%20%22https://i.im.ge/2022/09/23/1hVLEc.Goose.png%22 con método GET no implementada"}
 {"level":"warn","message":"Ruta /favicon.ico con método GET no implementada"}
+{"level":"warn","message":"Ruta /favicon.ico con método GET no implementada"}
+{"code":11000,"index":0,"keyPattern":{"_id":1},"keyValue":{"_id":"636d7cf7a8db538d07e9112d"},"level":"error"}
+{"code":11000,"index":0,"keyPattern":{"_id":1},"keyValue":{"_id":"636d7cf7a8db538d07e9112d"},"level":"error"}
+{"code":11000,"index":0,"keyPattern":{"_id":1},"keyValue":{"_id":"636d7cf7a8db538d07e9112d"},"level":"error"}

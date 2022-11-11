@@ -966,3 +966,88 @@
 {"level":"info","message":"Server running on port 8080, mode: FORK"}
 {"level":"info","message":"[10/10/2022 23:40:27] witchking@mrkdln.va ha iniciado sesión."}
 {"level":"info","message":"[10/10/2022 23:40:27] GET /api/home"}
+{"level":"info","message":"[10/10/2022 23:46:16] GET /api/home"}
+{"level":"info","message":"Server running on port 8080, mode: FORK"}
+{"level":"info","message":"Server running on port 8080, mode: FORK"}
+{"level":"info","message":"Server running on port 8080, mode: FORK"}
+{"level":"info","message":"Server running on port 8080, mode: FORK"}
+{"level":"info","message":"Server running on port 8080, mode: FORK"}
+{"level":"info","message":"Server running on port 8080, mode: FORK"}
+{"level":"info","message":"Server running on port 8080, mode: FORK"}
+{"level":"info","message":"Server running on port 8080, mode: FORK"}
+{"level":"info","message":"Server running on port 8080, mode: FORK"}
+{"level":"info","message":"Server running on port 8080, mode: FORK"}
+{"level":"info","message":"Server running on port 8080, mode: FORK"}
+{"level":"info","message":"[11/10/2022 0:4:13] GET /api/carritos/636d7cf7a8db538d07e9112d/productos"}
+{"level":"info","message":"[11/10/2022 0:4:18] witchking@mrkdln.va ha iniciado sesión."}
+{"level":"info","message":"[11/10/2022 0:4:18] GET /api/home"}
+{"level":"info","message":"[11/10/2022 0:4:21] GET /api/carritos/636d7cf7a8db538d07e9112d/productos"}
+{"level":"info","message":"Server running on port 8080, mode: FORK"}
+{"level":"info","message":"[11/10/2022 0:5:45] GET /api/home"}
+{"level":"info","message":"[11/10/2022 0:5:47] GET /api/carritos/636d7cf7a8db538d07e9112d"}
+{"level":"info","message":"Server running on port 8080, mode: FORK"}
+{"level":"info","message":"[11/10/2022 0:6:58] GET /api/home"}
+{"level":"info","message":"[11/10/2022 0:7:0] GET /api/carritos/636d7cf7a8db538d07e9112d"}
+{"level":"info","message":"Nuevo pedido de 636d7cf7a8db538d07e9112d, [object Object]"}
+{"level":"info","message":"Server running on port 8080, mode: FORK"}
+{"level":"info","message":"Server running on port 8080, mode: FORK"}
+{"level":"info","message":"[11/10/2022 0:26:36] GET /favicon.ico"}
+{"level":"warn","message":"Ruta /favicon.ico con método GET no implementada"}
+{"level":"info","message":"[11/10/2022 0:26:39] GET /api/home"}
+{"level":"info","message":"[11/10/2022 0:26:47] witchking@mrkdln.va ha iniciado sesión."}
+{"level":"info","message":"[11/10/2022 0:26:47] GET /api/home"}
+{"level":"info","message":"[11/10/2022 0:26:50] GET /api/carritos/636d7cf7a8db538d07e9112d"}
+{"level":"info","message":"Server running on port 8080, mode: FORK"}
+{"level":"info","message":"[11/10/2022 0:27:38] GET /api/home"}
+{"level":"info","message":"[11/10/2022 0:27:40] GET /api/carritos/636d7cf7a8db538d07e9112d"}
+{"level":"info","message":"Server running on port 8080, mode: FORK"}
+{"level":"info","message":"[11/10/2022 0:30:8] GET /api/home"}
+{"level":"info","message":"[11/10/2022 0:30:9] GET /api/carritos/636d7cf7a8db538d07e9112d"}
+{"level":"info","message":"SM6ff0c5a1387759667e2887c1005fa046"}
+{"level":"info","message":"Nuevo pedido de 636d7cf7a8db538d07e9112d, [object Object]"}
+{"level":"info","message":"Server running on port 8080, mode: FORK"}
+{"level":"info","message":"[11/10/2022 0:30:37] GET /api/home"}
+{"level":"info","message":"[11/10/2022 0:30:39] GET /api/carritos/636d7cf7a8db538d07e9112d"}
+{"level":"info","message":"Server running on port 8080, mode: FORK"}
+{"level":"info","message":"[11/10/2022 0:31:9] GET /api/carritos/636d7cf7a8db538d07e9112d"}
+{"level":"info","message":"SM249e12445b55b2b38535cb5b825d1af6"}
+{"level":"info","message":"Nuevo pedido de 636d7cf7a8db538d07e9112d, [object Object]"}
+{"level":"info","message":"Server running on port 8080, mode: FORK"}
+{"level":"info","message":"[11/10/2022 0:32:14] GET /api/home"}
+{"level":"info","message":"[11/10/2022 0:32:15] GET /api/carritos/636d7cf7a8db538d07e9112d"}
+{"level":"info","message":"SM997ca87365e47184393ea7188e695af5"}
+{"level":"info","message":"Nuevo pedido de 636d7cf7a8db538d07e9112d, [object Object]"}
+{"level":"info","message":"Server running on port 8080, mode: FORK"}
+{"level":"info","message":"[11/10/2022 0:33:39] GET /api/carritos/636d7cf7a8db538d07e9112d"}
+{"level":"info","message":"SM7fed4a98671708ab461291131116197e"}
+{"level":"info","message":"Nuevo pedido de 636d7cf7a8db538d07e9112d, [object Object]"}
+{"level":"info","message":"Server running on port 8080, mode: FORK"}
+{"level":"info","message":"[11/10/2022 0:35:45] GET /api/home"}
+{"level":"info","message":"[11/10/2022 0:35:59] witchking@mrkdln.va ha iniciado sesión."}
+{"level":"info","message":"[11/10/2022 0:35:59] GET /api/home"}
+{"level":"info","message":"[11/10/2022 0:36:3] GET /api/carritos/636d7cf7a8db538d07e9112d"}
+{"level":"info","message":"SM7d35b6d8224b0befb4bc2da5401d61a2"}
+{"level":"info","message":"Nuevo pedido de 636d7cf7a8db538d07e9112d, [object Object]"}
+{"level":"info","message":"Server running on port 8080, mode: FORK"}
+{"level":"info","message":"[11/10/2022 0:36:26] GET /api/home"}
+{"level":"info","message":"[11/10/2022 0:36:27] GET /api/carritos/636d7cf7a8db538d07e9112d"}
+{"level":"info","message":"SM2be741a862fdad7fa96af33745658a90"}
+{"level":"info","message":"Nuevo pedido de 636d7cf7a8db538d07e9112d, [object Object]"}
+{"level":"info","message":"Server running on port 8080, mode: FORK"}
+{"level":"info","message":"[11/10/2022 0:36:40] GET /api/carritos/636d7cf7a8db538d07e9112d"}
+{"level":"info","message":"SMb8c697b7c3182b890720e4791eb83f17"}
+{"level":"info","message":"Nuevo pedido de 636d7cf7a8db538d07e9112d, [object Object]"}
+{"level":"info","message":"Server running on port 8080, mode: FORK"}
+{"level":"info","message":"Server running on port 8080, mode: FORK"}
+{"level":"info","message":"Server running on port 8080, mode: FORK"}
+{"level":"info","message":"[11/10/2022 0:39:56] GET /api/home"}
+{"level":"info","message":"[11/10/2022 0:39:59] POST /api/carritos"}
+{"code":11000,"index":0,"keyPattern":{"_id":1},"keyValue":{"_id":"636d7cf7a8db538d07e9112d"},"level":"error"}
+{"level":"info","message":"[11/10/2022 0:39:59] POST /api/carritos/636d7cf7a8db538d07e9112d/productos"}
+{"level":"info","message":"[11/10/2022 0:40:20] POST /api/carritos"}
+{"code":11000,"index":0,"keyPattern":{"_id":1},"keyValue":{"_id":"636d7cf7a8db538d07e9112d"},"level":"error"}
+{"level":"info","message":"[11/10/2022 0:40:20] POST /api/carritos/636d7cf7a8db538d07e9112d/productos"}
+{"level":"info","message":"[11/10/2022 0:40:21] POST /api/carritos"}
+{"code":11000,"index":0,"keyPattern":{"_id":1},"keyValue":{"_id":"636d7cf7a8db538d07e9112d"},"level":"error"}
+{"level":"info","message":"[11/10/2022 0:40:21] POST /api/carritos/636d7cf7a8db538d07e9112d/productos"}
+{"level":"info","message":"Server running on port 8080, mode: FORK"}
