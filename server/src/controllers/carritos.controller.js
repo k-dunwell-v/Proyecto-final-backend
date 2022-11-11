@@ -95,8 +95,8 @@ const sendCart = async (req, res = response) => {
         })
 
         // WSP to admin
-        const accountSid = 'ACaa7e207ada371a7493ba8efda080c563'; 
-        const authToken = 'de9d22ed0b4831cd6c8aa1920009893e'; 
+        const accountSid = process.env.TWILIO_ACCOUNT_SID; 
+        const authToken = process.env.TWILIO_AUTH_TOKEN; 
         const client = require('twilio')(accountSid, authToken); 
  
         client.messages 
