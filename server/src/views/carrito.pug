@@ -1,0 +1,41 @@
+div(class="cart")
+    span
+        img(style="width:100px;height:100px;border-radius:50%" src=`${user.pfp}`)
+        h3(style="color:black")= `¡Hey, ${user.username}!`
+        
+    a(href="/api/carritos/"+user.id+"/productos")
+        span Ver carrito
+
+    span ||
+
+    a(href="/api/carritos/"+user.id+"/productos")
+        span Enviar carrito <3
+
+    span ||
+
+    a(href="/api/logout")
+        span Desconectarse 
+
+    hr
+
+    table 
+        tr 
+            th Nombre:
+            td=`${user.name}`
+
+        tr 
+            th Edad:
+            td=`${user.age}`
+        
+        tr 
+            th Dirección:
+            td=`${user.address}`
+
+        tr 
+            th Correo:
+            td=`${user.username}`
+
+        tr 
+            th Telefono:
+            td=`${user.phone}`
+
