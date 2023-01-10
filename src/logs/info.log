@@ -1401,3 +1401,4 @@
 {"level":"info","message":"[9/1/2023 22:1:38] witchking@mrkdln.va ha iniciado sesión."}
 {"level":"info","message":"[9/1/2023 22:1:39] GET /api/home"}
 {"level":"info","message":"Unknown bunny connected"}
+{"level":"info","message":"Server running on port undefined"}
