@@ -16,7 +16,7 @@ html
                 div(class='log')
                     form(method="POST" action="/api/login")
                         input(type="text" name="username" placeholder="Usuario" required)
-                        input(type="text" name="password" placeholder="Contraseña" required)
+                        input(type="password" name="password" placeholder="Contraseña" required)
                         div(class="logDiv")
                             input(type="button" class="button" onclick="location.href='/api/signup';" value="No tengo usuario")
                             input(type="submit" class="submit" value="Entrar")
