@@ -44,5 +44,3 @@ function addToCart(data) {
     });
 }
 
-
-

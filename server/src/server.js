@@ -1,37 +1,43 @@
 const { httpServer } = require('./app')
 const { logger } = require('./logs/logger')
 
-const yargs = require('yargs/yargs')(process.argv.slice(2))
-const args = yargs.default({
-    port: process.env.PORT,
-    mode: "fork"
-}).argv
+const { Server:ServerIo } = require("socket.io")
+const io = new ServerIo(httpServer)
 
-const cluster = require("cluster")
-const os = require("os")
-const cpus = os.cpus().length
+const msgdb = require('./models/mensajes.model')
 
-if (args.mode === "fork") {
-    httpServer.listen(args.port, () => {
-        logger.info(`Server running on port ${args.port}, mode: FORK`)
+io.on('connection', (socket) => {
+    logger.info(`Unknown bunny connected`)
+
+    msgdb.find().then((messages) => {
+        socket.emit('connection', {"messages":messages})
+    }).catch((err) => {
+        console.log(err);throw err
     })
-    
-}else if (args.mode === "cluster") {
-    if (cluster.isMaster) {
-        logger.info(`Primary process: ${process.pid} is running`)
-        for (let i = 0; i < cpus; i++) {
-            cluster.fork()
+
+    // NUEVOS MENSAJES DEL CHAT
+    socket.on('chatter', (message) => {
+
+        try {
+            const newMsg = new msgdb({
+                email: message['email'],
+                date: message['date'],
+                message: message['message']
+            })
+            
+            newMsg.save()
+
+        } catch (err) {
+            console.log(err);throw err
         }
 
-        cluster.on("exit", (worker) => {
-            logger.info(`Worker ${worker.process.pid} died`)
-        })
+        io.emit('chatter', message)
+    })
+})
 
-    } else {
-        httpServer.listen(args.port, err => {
-            if (err) throw err
-            logger.info(`Worker ${process.pid} started`)
-        })
+const port = process.env.PORT
 
-    }
-}
+httpServer.listen(port, () => {
+    logger.info(`Server running on port ${port}`)
+})
+    

@@ -1,0 +1,84 @@
+div(class="side")
+    span
+        img(style="width:100px;height:100px;border-radius:50%" src=`${user.pfp}`)
+        h3(style="color:black")= `¡Hey, ${user.username}!`
+        
+    a(href="/api/carritos/"+user.id+"/productos")
+        span Ver carrito
+
+    span ||
+
+    a(href="/api/carritos/"+user.id)
+        span Enviar carrito <3
+
+    span ||
+
+    a(href="/api/logout")
+        span Desconectarse 
+
+    hr
+
+    table 
+        tr 
+            th Nombre:
+            td=`${user.name}`
+
+        tr 
+            th Edad:
+            td=`${user.age}`
+        
+        tr 
+            th Dirección:
+            td=`${user.address}`
+
+        tr 
+            th Correo:
+            td=`${user.username}`
+
+        tr 
+            th Telefono:
+            td=`${user.phone}`
+
+    div(class="chatBox")
+
+        form(id="chat")
+            input(type="text" placeholder="Nombre o Email" id="email" value=user.username required)
+
+            hr
+
+            ul(id="chat-messages")
+
+            hr
+
+            div(class="chatDiv")
+                input(type="text" placeholder="Di algo!" id="message" required)
+                input(type="submit" class="submit" value="Enviar")
+
+    script.
+        const socket = io();
+
+        socket.on('connection', (data) => {
+
+            $('#chat-messages').empty()
+            data["messages"].map( (message) => {
+                $('#chat-messages').append($('<li>').html(`<span style="color: ${randomColor({luminosity: 'light'})}">${message["date"]} ${message["email"]}: <b>${message["message"]}</b></span>`))
+            })
+
+        })
+
+        $("#chat").submit( () => {
+            const email = $('#email').val()
+            const message = $('#message').val()
+
+            const d = new Date()
+            const date = `[${d.getDate()}/${d.getMonth() + 1}/${d.getFullYear()} ${d.getHours()}:${d.getMinutes()}:${d.getSeconds()}]`
+
+            socket.emit('chatter', {"email":email, "date":date, "message":message})
+            $('#message').val('')
+
+            return false; 
+        })
+
+        socket.on('chatter', function(message) {
+            $('#chat-messages').append($('<li>').html(`<span style="color: ${randomColor({luminosity: 'light'})}">${message["date"]} ${message["email"]}: <b>${message["message"]}</b></span>`))
+        })
